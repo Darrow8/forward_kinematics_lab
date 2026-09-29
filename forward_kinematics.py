@@ -96,17 +96,26 @@ class ForwardKinematics(Node):
             ]
         )
 
+
     def rotation_y(self, angle):
         ## TODO: Implement the rotation matrix about the y-axis
-        # return np.array([
-        # ])
-        raise NotImplementedError()
+        return np.array([
+                [0, 1, 0, 0],
+                [np.cos(angle),0, -np.sin(angle), 0],
+                [np.sin(angle),0, np.cos(angle), 0],
+                [0, 0, 0, 1],
+        ])
+        # raise NotImplementedError()
 
     def rotation_z(self, angle):
         ## TODO: Implement the rotation matrix about the z-axis
-        # return np.array([
-        # ])
-        raise NotImplementedError()
+        return np.array([
+                [0, 0, 1, 0],
+                [np.cos(angle),-np.sin(angle),0, 0],
+                [np.sin(angle),np.cos(angle),0, 0],
+                [0, 0, 0, 1],
+        ])
+        # raise NotImplementedError()
 
     def translation(self, x, y, z):
         ## TODO: Implement the translation matrix
