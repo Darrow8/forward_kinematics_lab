@@ -316,6 +316,17 @@ class ForwardKinematics(Node):
 
             end_effector_position = np.asarray(end_effector_position, dtype=float).reshape(3)
 
+            file_path = "challenge.txt"
+
+            with open("challenge.txt", "a") as file:
+                file.write(
+                    f"{leg},"
+                    f"{end_effector_position[0]},"
+                    f"{end_effector_position[1]},"
+                    f"{end_effector_position[2]}\n"
+                )
+
+
             self.marker_publisher.publish(self.make_marker(leg, marker_id, end_effector_position))
 
             position = Float64MultiArray()
